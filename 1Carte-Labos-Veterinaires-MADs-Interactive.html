@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6d6a4ef58e650996e26b316863ba4ff8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6d6a4ef58e650996e26b316863ba4ff8" ></div>
+        
+    
+<div style="
+     position: fixed;
+     bottom: 30px;
+     left: 30px;
+     width: 260px;
+     padding: 10px 15px;
+     background-color: rgba(255, 255, 255, 0.9);
+     border: 2px solid grey;
+     border-radius: 6px;
+     z-index: 9999;
+     font-size: 13px;
+     font-family: Arial, sans-serif;
+">
+  <b>📌 Légende - Secteurs</b><br><br>
+  <div style="margin-bottom: 4px;">
+    <span style="display:inline-block;width:14px;height:14px;
+                 background-color:#0070C0;border-radius:50%;margin-right:6px;"></span>
+    ENSEIGNEMENT
+  </div>
+  <div style="margin-bottom: 4px;">
+    <span style="display:inline-block;width:14px;height:14px;
+                 background-color:#00B050;border-radius:50%;margin-right:6px;"></span>
+    RECHERCHE PUBLIQUE
+  </div>
+  <div style="margin-bottom: 4px;">
+    <span style="display:inline-block;width:14px;height:14px;
+                 background-color:#FFC000;border-radius:50%;margin-right:6px;"></span>
+    RECHERCHE PRIVÉE
+  </div>
+  <div style="margin-bottom: 4px;">
+    <span style="display:inline-block;width:14px;height:14px;
+                 background-color:#C5504F;border-radius:50%;margin-right:6px;"></span>
+    LABORATOIRES DIAGNOSTIC
+  </div>
+  <div>
+    <span style="display:inline-block;width:14px;height:14px;
+                 background-color:#7F3F97;border-radius:50%;margin-right:6px;"></span>
+    CLINIQUES
+  </div>
+</div>
+</body>
+<script>
+    
+    
+            var map_6d6a4ef58e650996e26b316863ba4ff8 = L.map(
+                "map_6d6a4ef58e650996e26b316863ba4ff8",
+                {
+                    center: [46.8, 2.5],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ef9cfb0c8bac1e77907174690ffc013a = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_ef9cfb0c8bac1e77907174690ffc013a.addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+            var circle_marker_ffa6b1e46dcda41f47ac4a828b88126b = L.circleMarker(
+                [48.8, 2.43],
+                {"bubblingMouseEvents": true, "color": "#0070C0", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0070C0", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_aa65bfd239d7675558c9cc5b251fe585 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7ec8b8435ac590d5dc08a96289c9fa73 = $(`<div id="html_7ec8b8435ac590d5dc08a96289c9fa73" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #0070C0; margin-bottom: 6px;">             ENVA - École Nationale Vétérinaire d'Alfort         </h4>         <b>Secteur :</b> ENSEIGNEMENT<br>         <b>Ville :</b> Maisons-Alfort (Île-de-France)<br>         <b>Téléphone :</b> 01 49 77 13 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Maladies infectieuses, épidémiologie</span><br><br>         <a href="https://www.enva.fr" target="_blank"            style="              background-color: #0070C0;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_aa65bfd239d7675558c9cc5b251fe585.setContent(html_7ec8b8435ac590d5dc08a96289c9fa73);
+            
+        
+
+        circle_marker_ffa6b1e46dcda41f47ac4a828b88126b.bindPopup(popup_aa65bfd239d7675558c9cc5b251fe585)
+        ;
+
+        
+    
+    
+            circle_marker_ffa6b1e46dcda41f47ac4a828b88126b.bindTooltip(
+                `<div>
+                     ENVA - École Nationale Vétérinaire d'Alfort
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ba331a3a3f2ebd406b69ab732977b3f0 = L.circleMarker(
+                [43.56, 1.44],
+                {"bubblingMouseEvents": true, "color": "#0070C0", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0070C0", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_c16da0bc882eb2fc5393f9c26bd7d27b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3417769c14b7e93e37a6280a7a5fcf8c = $(`<div id="html_3417769c14b7e93e37a6280a7a5fcf8c" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #0070C0; margin-bottom: 6px;">             ENVT - École Nationale Vétérinaire Toulouse         </h4>         <b>Secteur :</b> ENSEIGNEMENT<br>         <b>Ville :</b> Toulouse (Occitanie)<br>         <b>Téléphone :</b> 05 61 19 38 06<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Santé animale, microbiologie vétérinaire</span><br><br>         <a href="https://www.envt.fr" target="_blank"            style="              background-color: #0070C0;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_c16da0bc882eb2fc5393f9c26bd7d27b.setContent(html_3417769c14b7e93e37a6280a7a5fcf8c);
+            
+        
+
+        circle_marker_ba331a3a3f2ebd406b69ab732977b3f0.bindPopup(popup_c16da0bc882eb2fc5393f9c26bd7d27b)
+        ;
+
+        
+    
+    
+            circle_marker_ba331a3a3f2ebd406b69ab732977b3f0.bindTooltip(
+                `<div>
+                     ENVT - École Nationale Vétérinaire Toulouse
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0aa85f8170f1cab16f50ebfd70668684 = L.circleMarker(
+                [47.21, -1.55],
+                {"bubblingMouseEvents": true, "color": "#0070C0", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0070C0", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_970b1c5dbb27914928527f40e25de457 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8d552b1da59cf23f0f10163df1904116 = $(`<div id="html_8d552b1da59cf23f0f10163df1904116" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #0070C0; margin-bottom: 6px;">             Oniris - École Nationale Vétérinaire Nantes         </h4>         <b>Secteur :</b> ENSEIGNEMENT<br>         <b>Ville :</b> Nantes (Pays de la Loire)<br>         <b>Téléphone :</b> 02 40 68 77 77<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Santé animale, biotechnologies</span><br><br>         <a href="https://www.oniris-nantes.fr" target="_blank"            style="              background-color: #0070C0;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_970b1c5dbb27914928527f40e25de457.setContent(html_8d552b1da59cf23f0f10163df1904116);
+            
+        
+
+        circle_marker_0aa85f8170f1cab16f50ebfd70668684.bindPopup(popup_970b1c5dbb27914928527f40e25de457)
+        ;
+
+        
+    
+    
+            circle_marker_0aa85f8170f1cab16f50ebfd70668684.bindTooltip(
+                `<div>
+                     Oniris - École Nationale Vétérinaire Nantes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1e0cfee7b079d0d110d50b78c5f6ab6b = L.circleMarker(
+                [45.75, 4.88],
+                {"bubblingMouseEvents": true, "color": "#0070C0", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0070C0", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_9f3c6cd403fe73806d2fde071438d123 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9551c1bd683e0622b1369dd956c4fe91 = $(`<div id="html_9551c1bd683e0622b1369dd956c4fe91" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #0070C0; margin-bottom: 6px;">             VetAgro Sup - École Nationale Vétérinaire Lyon         </h4>         <b>Secteur :</b> ENSEIGNEMENT<br>         <b>Ville :</b> Marcy-l'Étoile (Auvergne-Rhône-Alpes)<br>         <b>Téléphone :</b> 04 78 87 25 09<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Microbiologie vétérinaire, maladies infectieuses</span><br><br>         <a href="https://www.vetagro-sup.fr" target="_blank"            style="              background-color: #0070C0;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_9f3c6cd403fe73806d2fde071438d123.setContent(html_9551c1bd683e0622b1369dd956c4fe91);
+            
+        
+
+        circle_marker_1e0cfee7b079d0d110d50b78c5f6ab6b.bindPopup(popup_9f3c6cd403fe73806d2fde071438d123)
+        ;
+
+        
+    
+    
+            circle_marker_1e0cfee7b079d0d110d50b78c5f6ab6b.bindTooltip(
+                `<div>
+                     VetAgro Sup - École Nationale Vétérinaire Lyon
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d3d9be79725988d4ee6b4476e4893f74 = L.circleMarker(
+                [49.43, 1.09],
+                {"bubblingMouseEvents": true, "color": "#0070C0", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0070C0", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_233292a8e49da46089ad0e455fd8b2f3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0a1f84f3a22e954b994aef36b8f5cc73 = $(`<div id="html_0a1f84f3a22e954b994aef36b8f5cc73" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #0070C0; margin-bottom: 6px;">             UniLaSalle - École Vétérinaire Privée         </h4>         <b>Secteur :</b> ENSEIGNEMENT<br>         <b>Ville :</b> Mont-Saint-Aignan (Rouen) (Normandie)<br>         <b>Téléphone :</b> 02 32 82 98 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Formation clinique appliquée</span><br><br>         <a href="https://www.unilasalle.fr/formations/ecole-veterinaire" target="_blank"            style="              background-color: #0070C0;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_233292a8e49da46089ad0e455fd8b2f3.setContent(html_0a1f84f3a22e954b994aef36b8f5cc73);
+            
+        
+
+        circle_marker_d3d9be79725988d4ee6b4476e4893f74.bindPopup(popup_233292a8e49da46089ad0e455fd8b2f3)
+        ;
+
+        
+    
+    
+            circle_marker_d3d9be79725988d4ee6b4476e4893f74.bindTooltip(
+                `<div>
+                     UniLaSalle - École Vétérinaire Privée
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee152d1df03cbf0d6e0a0d2079ba0696 = L.circleMarker(
+                [48.84, 2.29],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_3d074f8b7d5f7f5da48970f7f9c231d2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ad1a3a0c1eecf7094c7acad002ff12f2 = $(`<div id="html_ad1a3a0c1eecf7094c7acad002ff12f2" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             INRAE - Siège National         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Paris (Île-de-France)<br>         <b>Téléphone :</b> +33 (0)1 42 75 90 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Agriculture, alimentation, environnement</span><br><br>         <a href="https://www.inrae.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_3d074f8b7d5f7f5da48970f7f9c231d2.setContent(html_ad1a3a0c1eecf7094c7acad002ff12f2);
+            
+        
+
+        circle_marker_ee152d1df03cbf0d6e0a0d2079ba0696.bindPopup(popup_3d074f8b7d5f7f5da48970f7f9c231d2)
+        ;
+
+        
+    
+    
+            circle_marker_ee152d1df03cbf0d6e0a0d2079ba0696.bindTooltip(
+                `<div>
+                     INRAE - Siège National
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd96c27c1fadf0949c4de0fa5287d627 = L.circleMarker(
+                [47.4, 0.87],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_17fdc30d605d8a8f5ba6a78794f5cfd4 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2a1daa6d137db1ce52ea0f5f15fdbfd8 = $(`<div id="html_2a1daa6d137db1ce52ea0f5f15fdbfd8" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             INRAE Val de Loire - Centre Nouzilly         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Nouzilly (Centre-Val de Loire)<br>         <b>Téléphone :</b> 02 47 42 78 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Maladies infectieuses, épidémiologie</span><br><br>         <a href="https://www.inrae.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_17fdc30d605d8a8f5ba6a78794f5cfd4.setContent(html_2a1daa6d137db1ce52ea0f5f15fdbfd8);
+            
+        
+
+        circle_marker_dd96c27c1fadf0949c4de0fa5287d627.bindPopup(popup_17fdc30d605d8a8f5ba6a78794f5cfd4)
+        ;
+
+        
+    
+    
+            circle_marker_dd96c27c1fadf0949c4de0fa5287d627.bindTooltip(
+                `<div>
+                     INRAE Val de Loire - Centre Nouzilly
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f4409ce05ca5398a1d85a1814ac0be27 = L.circleMarker(
+                [48.77, 2.18],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_fa80f226d0dad8e43b0f6cf7635a4335 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c5902d38bedc8cc71fb046ae61f12519 = $(`<div id="html_c5902d38bedc8cc71fb046ae61f12519" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             INRAE Jouy-en-Josas         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Jouy-en-Josas (Île-de-France)<br>         <b>Téléphone :</b> 01 60 87 30 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Santé animale, microbiologie</span><br><br>         <a href="https://www.inrae.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_fa80f226d0dad8e43b0f6cf7635a4335.setContent(html_c5902d38bedc8cc71fb046ae61f12519);
+            
+        
+
+        circle_marker_f4409ce05ca5398a1d85a1814ac0be27.bindPopup(popup_fa80f226d0dad8e43b0f6cf7635a4335)
+        ;
+
+        
+    
+    
+            circle_marker_f4409ce05ca5398a1d85a1814ac0be27.bindTooltip(
+                `<div>
+                     INRAE Jouy-en-Josas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db54e64eca83e706870cc4590932b133 = L.circleMarker(
+                [48.27, -2.75],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_ea04a63d3766bdd0c910691904f18bf4 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0df97d16a86b864de0ae287c5d6b5341 = $(`<div id="html_0df97d16a86b864de0ae287c5d6b5341" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             INRAE Bretagne Saint-Gilles         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Saint-Gilles (Bretagne)<br>         <b>Téléphone :</b> 02 96 01 92 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Zoonoses, surveillance</span><br><br>         <a href="https://www.inrae.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_ea04a63d3766bdd0c910691904f18bf4.setContent(html_0df97d16a86b864de0ae287c5d6b5341);
+            
+        
+
+        circle_marker_db54e64eca83e706870cc4590932b133.bindPopup(popup_ea04a63d3766bdd0c910691904f18bf4)
+        ;
+
+        
+    
+    
+            circle_marker_db54e64eca83e706870cc4590932b133.bindTooltip(
+                `<div>
+                     INRAE Bretagne Saint-Gilles
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_afdaac686f3f53d38334969803d78608 = L.circleMarker(
+                [43.59, 1.47],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_15aa430bae88acd83b8839db861b171d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6bbb4805bd5b112d45523fae173a37f8 = $(`<div id="html_6bbb4805bd5b112d45523fae173a37f8" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             INRAE Occitanie Toulouse         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Toulouse (Occitanie)<br>         <b>Téléphone :</b> 05 61 28 50 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Maladies infectieuses</span><br><br>         <a href="https://www.inrae.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_15aa430bae88acd83b8839db861b171d.setContent(html_6bbb4805bd5b112d45523fae173a37f8);
+            
+        
+
+        circle_marker_afdaac686f3f53d38334969803d78608.bindPopup(popup_15aa430bae88acd83b8839db861b171d)
+        ;
+
+        
+    
+    
+            circle_marker_afdaac686f3f53d38334969803d78608.bindTooltip(
+                `<div>
+                     INRAE Occitanie Toulouse
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2bdc2556ea71b2c448103c058a738451 = L.circleMarker(
+                [48.83, 2.46],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_f226330abd320ede53edc9a135efb128 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_05fa2eddbba54fbed9297a6d6d015f32 = $(`<div id="html_05fa2eddbba54fbed9297a6d6d015f32" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             UMR BIPAR (ENVA-ANSES-Université Paris-Est)         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Maisons-Alfort (Île-de-France)<br>         <b>Téléphone :</b> 01 49 77 13 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Parasites et zoonoses</span><br><br>         <a href="https://www.enva.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_f226330abd320ede53edc9a135efb128.setContent(html_05fa2eddbba54fbed9297a6d6d015f32);
+            
+        
+
+        circle_marker_2bdc2556ea71b2c448103c058a738451.bindPopup(popup_f226330abd320ede53edc9a135efb128)
+        ;
+
+        
+    
+    
+            circle_marker_2bdc2556ea71b2c448103c058a738451.bindTooltip(
+                `<div>
+                     UMR BIPAR (ENVA-ANSES-Université Paris-Est)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e394cf293122c1d1320dfe04248fdf6a = L.circleMarker(
+                [48.800000000000004, 2.21],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_14453cc420b975c080f32d1e113706e2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e375e318ec2377148099aaf9acafe025 = $(`<div id="html_e375e318ec2377148099aaf9acafe025" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             UMR MAIAGE/EpiA (Université Paris-Saclay-INRAE-ANSES)         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Jouy-en-Josas (Île-de-France)<br>         <b>Téléphone :</b> 01 60 87 30 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Épidémiologie, TB bovine</span><br><br>         <a href="https://www.inrae.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_14453cc420b975c080f32d1e113706e2.setContent(html_e375e318ec2377148099aaf9acafe025);
+            
+        
+
+        circle_marker_e394cf293122c1d1320dfe04248fdf6a.bindPopup(popup_14453cc420b975c080f32d1e113706e2)
+        ;
+
+        
+    
+    
+            circle_marker_e394cf293122c1d1320dfe04248fdf6a.bindTooltip(
+                `<div>
+                     UMR MAIAGE/EpiA (Université Paris-Saclay-INRAE-ANSES)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fc809d4061392cae4bd497e46cf0c747 = L.circleMarker(
+                [48.86, 2.39],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_48cca5014b74abfc7c311aa7e7ad3af5 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_af83ea2a3ac2e6d606cf01dac92ac2f7 = $(`<div id="html_af83ea2a3ac2e6d606cf01dac92ac2f7" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             Institut Pasteur - Unité Mycobactéries         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Paris (Île-de-France)<br>         <b>Téléphone :</b> 01 45 68 80 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Mycobactéries, tuberculose</span><br><br>         <a href="https://www.pasteur.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_48cca5014b74abfc7c311aa7e7ad3af5.setContent(html_af83ea2a3ac2e6d606cf01dac92ac2f7);
+            
+        
+
+        circle_marker_fc809d4061392cae4bd497e46cf0c747.bindPopup(popup_48cca5014b74abfc7c311aa7e7ad3af5)
+        ;
+
+        
+    
+    
+            circle_marker_fc809d4061392cae4bd497e46cf0c747.bindTooltip(
+                `<div>
+                     Institut Pasteur - Unité Mycobactéries
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_660ada6a651ec267fc2336368a9f655f = L.circleMarker(
+                [45.76, 4.84],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_c58cfce3fb0b916f97df19092401288c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b4a3356a54b99f4438538637f220f1df = $(`<div id="html_b4a3356a54b99f4438538637f220f1df" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             UMR VAS (Université Lyon 1-VetAgro Sup-INRAE)         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Lyon/Marcy-l'Étoile (Auvergne-Rhône-Alpes)<br>         <b>Téléphone :</b> 04 78 87 25 09<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Virologie, santé animale</span><br><br>         <a href="https://www.vetagro-sup.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_c58cfce3fb0b916f97df19092401288c.setContent(html_b4a3356a54b99f4438538637f220f1df);
+            
+        
+
+        circle_marker_660ada6a651ec267fc2336368a9f655f.bindPopup(popup_c58cfce3fb0b916f97df19092401288c)
+        ;
+
+        
+    
+    
+            circle_marker_660ada6a651ec267fc2336368a9f655f.bindTooltip(
+                `<div>
+                     UMR VAS (Université Lyon 1-VetAgro Sup-INRAE)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0f38549e50f039090ef34e5f270d165c = L.circleMarker(
+                [45.79, 4.87],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_c79f67d25ceeb1ab51067d70948d7e89 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c2e57b4c02c8faea1924708eabcf9197 = $(`<div id="html_c2e57b4c02c8faea1924708eabcf9197" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             CIRI - Centre International Infectiologie         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Lyon (Auvergne-Rhône-Alpes)<br>         <b>Téléphone :</b> 04 72 07 28 90<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Pathogènes bactériens, interactions hôte-pathogène</span><br><br>         <a href="https://ciri.ens-lyon.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_c79f67d25ceeb1ab51067d70948d7e89.setContent(html_c2e57b4c02c8faea1924708eabcf9197);
+            
+        
+
+        circle_marker_0f38549e50f039090ef34e5f270d165c.bindPopup(popup_c79f67d25ceeb1ab51067d70948d7e89)
+        ;
+
+        
+    
+    
+            circle_marker_0f38549e50f039090ef34e5f270d165c.bindTooltip(
+                `<div>
+                     CIRI - Centre International Infectiologie
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ad22bb2cc1e11e8c50eb807c0debbec9 = L.circleMarker(
+                [43.620000000000005, 1.5],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_fdb1f4f620d79cd4255dd8b8016ccaa5 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_49d6db5b20a0481b87374b30fd4184fd = $(`<div id="html_49d6db5b20a0481b87374b30fd4184fd" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             UMR IHAP (ENVT-INRAE-Université Toulouse)         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Toulouse (Occitanie)<br>         <b>Téléphone :</b> 05 61 19 38 06<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Interactions hôtes-agents pathogènes</span><br><br>         <a href="https://www.envt.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_fdb1f4f620d79cd4255dd8b8016ccaa5.setContent(html_49d6db5b20a0481b87374b30fd4184fd);
+            
+        
+
+        circle_marker_ad22bb2cc1e11e8c50eb807c0debbec9.bindPopup(popup_fdb1f4f620d79cd4255dd8b8016ccaa5)
+        ;
+
+        
+    
+    
+            circle_marker_ad22bb2cc1e11e8c50eb807c0debbec9.bindTooltip(
+                `<div>
+                     UMR IHAP (ENVT-INRAE-Université Toulouse)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f0b55e536e3c73c9465da12ae186a76c = L.circleMarker(
+                [43.650000000000006, 1.53],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_d62ab280ee941b36959982e77e805896 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_498ac5975ae4a02a4940348fce59d0ea = $(`<div id="html_498ac5975ae4a02a4940348fce59d0ea" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             UMR ASTRE (INRAE-Université-CIRAD)         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Toulouse/Montpellier (Occitanie)<br>         <b>Téléphone :</b> 05 61 28 50 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Santé animale, territoires</span><br><br>         <a href="https://www.inrae.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_d62ab280ee941b36959982e77e805896.setContent(html_498ac5975ae4a02a4940348fce59d0ea);
+            
+        
+
+        circle_marker_f0b55e536e3c73c9465da12ae186a76c.bindPopup(popup_d62ab280ee941b36959982e77e805896)
+        ;
+
+        
+    
+    
+            circle_marker_f0b55e536e3c73c9465da12ae186a76c.bindTooltip(
+                `<div>
+                     UMR ASTRE (INRAE-Université-CIRAD)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2cf5bdef2bd4cf7fc5b2ba083f5be46d = L.circleMarker(
+                [47.24, -1.52],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_64f8a5818cb9efb5a7a8f0c57106b505 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a3e63b8fec5267f50c4d9003160269cc = $(`<div id="html_a3e63b8fec5267f50c4d9003160269cc" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             UMR BIOEPAR (Oniris-INRAE)         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Nantes (Pays de la Loire)<br>         <b>Téléphone :</b> 02 40 68 77 77<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Maladies infectieuses, épidémiologie</span><br><br>         <a href="https://www.oniris-nantes.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_64f8a5818cb9efb5a7a8f0c57106b505.setContent(html_a3e63b8fec5267f50c4d9003160269cc);
+            
+        
+
+        circle_marker_2cf5bdef2bd4cf7fc5b2ba083f5be46d.bindPopup(popup_64f8a5818cb9efb5a7a8f0c57106b505)
+        ;
+
+        
+    
+    
+            circle_marker_2cf5bdef2bd4cf7fc5b2ba083f5be46d.bindTooltip(
+                `<div>
+                     UMR BIOEPAR (Oniris-INRAE)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e994e62221588c18835d7d527947fb9d = L.circleMarker(
+                [47.43, 0.9],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_9faf8a8dd4cf14026d3351d273197034 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_442076b4889cdf8e70b1d4e7755524d6 = $(`<div id="html_442076b4889cdf8e70b1d4e7755524d6" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             UMR ISP (Université Tours-INRAE)         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Nouzilly (Centre-Val de Loire)<br>         <b>Téléphone :</b> 02 47 42 78 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Infectiologie, santé publique</span><br><br>         <a href="https://www.inrae.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_9faf8a8dd4cf14026d3351d273197034.setContent(html_442076b4889cdf8e70b1d4e7755524d6);
+            
+        
+
+        circle_marker_e994e62221588c18835d7d527947fb9d.bindPopup(popup_9faf8a8dd4cf14026d3351d273197034)
+        ;
+
+        
+    
+    
+            circle_marker_e994e62221588c18835d7d527947fb9d.bindTooltip(
+                `<div>
+                     UMR ISP (Université Tours-INRAE)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_667265a517b6cf4022fb36763c5e7ce5 = L.circleMarker(
+                [48.86, 2.49],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_447cce53e5b11cad5b451a0af223c83c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f0dafc2be68cbb386c257056cb77c2ea = $(`<div id="html_f0dafc2be68cbb386c257056cb77c2ea" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             ANSES - Siège National         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Maisons-Alfort (Île-de-France)<br>         <b>Téléphone :</b> 01 49 77 13 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Expertise sanitaire, surveillance</span><br><br>         <a href="https://www.anses.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_447cce53e5b11cad5b451a0af223c83c.setContent(html_f0dafc2be68cbb386c257056cb77c2ea);
+            
+        
+
+        circle_marker_667265a517b6cf4022fb36763c5e7ce5.bindPopup(popup_447cce53e5b11cad5b451a0af223c83c)
+        ;
+
+        
+    
+    
+            circle_marker_667265a517b6cf4022fb36763c5e7ce5.bindTooltip(
+                `<div>
+                     ANSES - Siège National
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_29ef5aae437ad0dc37f8614f0df2ee72 = L.circleMarker(
+                [48.89, 2.52],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_0eb38b004bd9112287708b1f99c8212b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d9a12d43373d13c194574f049f7cda21 = $(`<div id="html_d9a12d43373d13c194574f049f7cda21" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             ANSES - Pôle Santé Animale         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Maisons-Alfort (Île-de-France)<br>         <b>Téléphone :</b> 01 49 77 13 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Maladies réglementées, mycobactéries</span><br><br>         <a href="https://www.anses.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_0eb38b004bd9112287708b1f99c8212b.setContent(html_d9a12d43373d13c194574f049f7cda21);
+            
+        
+
+        circle_marker_29ef5aae437ad0dc37f8614f0df2ee72.bindPopup(popup_0eb38b004bd9112287708b1f99c8212b)
+        ;
+
+        
+    
+    
+            circle_marker_29ef5aae437ad0dc37f8614f0df2ee72.bindTooltip(
+                `<div>
+                     ANSES - Pôle Santé Animale
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c09966e4ced0fae66546b25fecd56b60 = L.circleMarker(
+                [48.919999999999995, 2.5500000000000003],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_04a60c724fecd47af36a5739ecf57986 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_345ca9dbfc92242761d2f1f2baf265d4 = $(`<div id="html_345ca9dbfc92242761d2f1f2baf265d4" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             ANSES - LNR TB Bovine         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Maisons-Alfort (Île-de-France)<br>         <b>Téléphone :</b> 01 49 77 13 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Référence TB bovine</span><br><br>         <a href="https://www.anses.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_04a60c724fecd47af36a5739ecf57986.setContent(html_345ca9dbfc92242761d2f1f2baf265d4);
+            
+        
+
+        circle_marker_c09966e4ced0fae66546b25fecd56b60.bindPopup(popup_04a60c724fecd47af36a5739ecf57986)
+        ;
+
+        
+    
+    
+            circle_marker_c09966e4ced0fae66546b25fecd56b60.bindTooltip(
+                `<div>
+                     ANSES - LNR TB Bovine
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e5066f805f61d1f97ef55f28161067cd = L.circleMarker(
+                [48.300000000000004, -2.72],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_f116e2c004845d1860e1fd458e5a2496 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b823ed9a0d8764d5fb6981881ca24207 = $(`<div id="html_b823ed9a0d8764d5fb6981881ca24207" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             ANSES - Pôle Ploufragan-Plouzané-Niort         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Ploufragan (Bretagne)<br>         <b>Téléphone :</b> 02 96 01 92 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Maladies ruminants, porcins, volailles</span><br><br>         <a href="https://www.anses.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_f116e2c004845d1860e1fd458e5a2496.setContent(html_b823ed9a0d8764d5fb6981881ca24207);
+            
+        
+
+        circle_marker_e5066f805f61d1f97ef55f28161067cd.bindPopup(popup_f116e2c004845d1860e1fd458e5a2496)
+        ;
+
+        
+    
+    
+            circle_marker_e5066f805f61d1f97ef55f28161067cd.bindTooltip(
+                `<div>
+                     ANSES - Pôle Ploufragan-Plouzané-Niort
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6fc5ab476ec1b1dc7f8ec508117d2c65 = L.circleMarker(
+                [48.69, 6.18],
+                {"bubblingMouseEvents": true, "color": "#00B050", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00B050", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_ac4e43528b7a0a0d313d4fba9275c428 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_cbaee5016b01ac398d5c320f37f9f01e = $(`<div id="html_cbaee5016b01ac398d5c320f37f9f01e" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #00B050; margin-bottom: 6px;">             ANSES - Laboratoire Sécurité Aliments Nancy         </h4>         <b>Secteur :</b> RECHERCHE PUBLIQUE<br>         <b>Ville :</b> Nancy (Grand Est)<br>         <b>Téléphone :</b> 03 87 55 41 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Microbiologie, pathogènes alimentaires</span><br><br>         <a href="https://www.anses.fr" target="_blank"            style="              background-color: #00B050;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_ac4e43528b7a0a0d313d4fba9275c428.setContent(html_cbaee5016b01ac398d5c320f37f9f01e);
+            
+        
+
+        circle_marker_6fc5ab476ec1b1dc7f8ec508117d2c65.bindPopup(popup_ac4e43528b7a0a0d313d4fba9275c428)
+        ;
+
+        
+    
+    
+            circle_marker_6fc5ab476ec1b1dc7f8ec508117d2c65.bindTooltip(
+                `<div>
+                     ANSES - Laboratoire Sécurité Aliments Nancy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4230ac96191e833279dea120830e2530 = L.circleMarker(
+                [45.82, 4.8999999999999995],
+                {"bubblingMouseEvents": true, "color": "#FFC000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFC000", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_e95877f8b539aa61b663cded2ac3877b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9b144b19aa11423598b2d4425fc0fd6a = $(`<div id="html_9b144b19aa11423598b2d4425fc0fd6a" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #FFC000; margin-bottom: 6px;">             Biomatech NamSA         </h4>         <b>Secteur :</b> RECHERCHE PRIVÉE<br>         <b>Ville :</b> Lyon (Auvergne-Rhône-Alpes)<br>         <b>Téléphone :</b> 04 72 85 51 51<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Études précliniques, microbiologie</span><br><br>         <a href="https://www.biomatech.com" target="_blank"            style="              background-color: #FFC000;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_e95877f8b539aa61b663cded2ac3877b.setContent(html_9b144b19aa11423598b2d4425fc0fd6a);
+            
+        
+
+        circle_marker_4230ac96191e833279dea120830e2530.bindPopup(popup_e95877f8b539aa61b663cded2ac3877b)
+        ;
+
+        
+    
+    
+            circle_marker_4230ac96191e833279dea120830e2530.bindTooltip(
+                `<div>
+                     Biomatech NamSA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e55fbec48eeac870d3a3e81b1c099350 = L.circleMarker(
+                [49.02, 1.15],
+                {"bubblingMouseEvents": true, "color": "#FFC000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFC000", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_9ab89866a3f920999ce57bb125686dc7 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3c7e43e57ecf9e91e5eb8a4866a5c095 = $(`<div id="html_3c7e43e57ecf9e91e5eb8a4866a5c095" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #FFC000; margin-bottom: 6px;">             Citoxlab / Charles River         </h4>         <b>Secteur :</b> RECHERCHE PRIVÉE<br>         <b>Ville :</b> Évreux / Laval (Normandie / Pays de la Loire)<br>         <b>Téléphone :</b> 02 32 39 22 22<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Toxicologie, infectiologie</span><br><br>         <a href="https://www.citoxlab.com" target="_blank"            style="              background-color: #FFC000;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_9ab89866a3f920999ce57bb125686dc7.setContent(html_3c7e43e57ecf9e91e5eb8a4866a5c095);
+            
+        
+
+        circle_marker_e55fbec48eeac870d3a3e81b1c099350.bindPopup(popup_9ab89866a3f920999ce57bb125686dc7)
+        ;
+
+        
+    
+    
+            circle_marker_e55fbec48eeac870d3a3e81b1c099350.bindTooltip(
+                `<div>
+                     Citoxlab / Charles River
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1b9386430a97b38e37aeb37fc0e21c8c = L.circleMarker(
+                [45.85, 4.93],
+                {"bubblingMouseEvents": true, "color": "#FFC000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFC000", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_a79c665e1db324f0c56e5807613a2bcd = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d9bb32a24003b504472c9cbe76b3ebd2 = $(`<div id="html_d9bb32a24003b504472c9cbe76b3ebd2" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #FFC000; margin-bottom: 6px;">             VetAgro BioServices         </h4>         <b>Secteur :</b> RECHERCHE PRIVÉE<br>         <b>Ville :</b> Lyon (Auvergne-Rhône-Alpes)<br>         <b>Téléphone :</b> 04 72 85 51 51<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Recherche santé animale</span><br><br>         <a href="https://www.vetagrobioservices.com" target="_blank"            style="              background-color: #FFC000;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_a79c665e1db324f0c56e5807613a2bcd.setContent(html_d9bb32a24003b504472c9cbe76b3ebd2);
+            
+        
+
+        circle_marker_1b9386430a97b38e37aeb37fc0e21c8c.bindPopup(popup_a79c665e1db324f0c56e5807613a2bcd)
+        ;
+
+        
+    
+    
+            circle_marker_1b9386430a97b38e37aeb37fc0e21c8c.bindTooltip(
+                `<div>
+                     VetAgro BioServices
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_33fb2398355595381f1d278a5d49455f = L.circleMarker(
+                [46.13, 3.55],
+                {"bubblingMouseEvents": true, "color": "#FFC000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFC000", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_3f8015b02a36028332666714c621e85c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8e603ce0c74a7e74a861ca2232c33b51 = $(`<div id="html_8e603ce0c74a7e74a861ca2232c33b51" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #FFC000; margin-bottom: 6px;">             Envigo CRS         </h4>         <b>Secteur :</b> RECHERCHE PRIVÉE<br>         <b>Ville :</b> Gannat (Auvergne-Rhône-Alpes)<br>         <b>Téléphone :</b> 04 70 56 21 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Études précliniques, pathogènes</span><br><br>         <a href="https://www.envigo.com" target="_blank"            style="              background-color: #FFC000;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_3f8015b02a36028332666714c621e85c.setContent(html_8e603ce0c74a7e74a861ca2232c33b51);
+            
+        
+
+        circle_marker_33fb2398355595381f1d278a5d49455f.bindPopup(popup_3f8015b02a36028332666714c621e85c)
+        ;
+
+        
+    
+    
+            circle_marker_33fb2398355595381f1d278a5d49455f.bindTooltip(
+                `<div>
+                     Envigo CRS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_376dd8b3989cb5cbddbfcc2b396e6591 = L.circleMarker(
+                [48.89, 2.42],
+                {"bubblingMouseEvents": true, "color": "#FFC000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFC000", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_554f6c6b68e11a3dcd167402cd3358bf = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_26e42e5b01364b4d32f44431348442c7 = $(`<div id="html_26e42e5b01364b4d32f44431348442c7" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #FFC000; margin-bottom: 6px;">             Charles River Laboratories         </h4>         <b>Secteur :</b> RECHERCHE PRIVÉE<br>         <b>Ville :</b> Multiple (Multiple)<br>         <b>Téléphone :</b> 02 32 39 22 22<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Études précliniques, infectiologie</span><br><br>         <a href="https://www.criver.com" target="_blank"            style="              background-color: #FFC000;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_554f6c6b68e11a3dcd167402cd3358bf.setContent(html_26e42e5b01364b4d32f44431348442c7);
+            
+        
+
+        circle_marker_376dd8b3989cb5cbddbfcc2b396e6591.bindPopup(popup_554f6c6b68e11a3dcd167402cd3358bf)
+        ;
+
+        
+    
+    
+            circle_marker_376dd8b3989cb5cbddbfcc2b396e6591.bindTooltip(
+                `<div>
+                     Charles River Laboratories
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6032c456a0d0e82fe5307f9bee6c84a1 = L.circleMarker(
+                [44.89, -0.24],
+                {"bubblingMouseEvents": true, "color": "#FFC000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFC000", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_f951225c7880859555358e4a267f66a6 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_001db04b7254c8eccf5ce5456660ac6c = $(`<div id="html_001db04b7254c8eccf5ce5456660ac6c" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #FFC000; margin-bottom: 6px;">             CEVA Santé Animale (R&D)         </h4>         <b>Secteur :</b> RECHERCHE PRIVÉE<br>         <b>Ville :</b> Libourne (Nouvelle-Aquitaine)<br>         <b>Téléphone :</b> 05 57 55 27 27<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Vaccins, médicaments vétérinaires</span><br><br>         <a href="https://www.ceva-santeanimale.fr" target="_blank"            style="              background-color: #FFC000;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_f951225c7880859555358e4a267f66a6.setContent(html_001db04b7254c8eccf5ce5456660ac6c);
+            
+        
+
+        circle_marker_6032c456a0d0e82fe5307f9bee6c84a1.bindPopup(popup_f951225c7880859555358e4a267f66a6)
+        ;
+
+        
+    
+    
+            circle_marker_6032c456a0d0e82fe5307f9bee6c84a1.bindTooltip(
+                `<div>
+                     CEVA Santé Animale (R&D)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aa796721eb121533390f2d89f6d8648b = L.circleMarker(
+                [43.69, 7.17],
+                {"bubblingMouseEvents": true, "color": "#FFC000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFC000", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_ceb50c60b726583cd1baa8272959e25d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_09daba6ee658593c3dd0aea65b8bf2ff = $(`<div id="html_09daba6ee658593c3dd0aea65b8bf2ff" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #FFC000; margin-bottom: 6px;">             Virbac (R&D)         </h4>         <b>Secteur :</b> RECHERCHE PRIVÉE<br>         <b>Ville :</b> Carros (Nice) (PACA)<br>         <b>Téléphone :</b> 04 92 08 38 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Médicaments, vaccins</span><br><br>         <a href="https://corporate.virbac.com" target="_blank"            style="              background-color: #FFC000;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_ceb50c60b726583cd1baa8272959e25d.setContent(html_09daba6ee658593c3dd0aea65b8bf2ff);
+            
+        
+
+        circle_marker_aa796721eb121533390f2d89f6d8648b.bindPopup(popup_ceb50c60b726583cd1baa8272959e25d)
+        ;
+
+        
+    
+    
+            circle_marker_aa796721eb121533390f2d89f6d8648b.bindTooltip(
+                `<div>
+                     Virbac (R&D)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_561d8db0827dea8b9786c554e7e3c79f = L.circleMarker(
+                [42.19, 2.68],
+                {"bubblingMouseEvents": true, "color": "#FFC000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFC000", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_4faefe8d82eab7e9f54fcdc659620b76 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_76eee6de47b0f75597debd8964635efd = $(`<div id="html_76eee6de47b0f75597debd8964635efd" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #FFC000; margin-bottom: 6px;">             Hipra         </h4>         <b>Secteur :</b> RECHERCHE PRIVÉE<br>         <b>Ville :</b> Amer (Gérone) (Catalogne)<br>         <b>Téléphone :</b> +34 972 424 800<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Vaccins vétérinaires</span><br><br>         <a href="https://www.hipra.com" target="_blank"            style="              background-color: #FFC000;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_4faefe8d82eab7e9f54fcdc659620b76.setContent(html_76eee6de47b0f75597debd8964635efd);
+            
+        
+
+        circle_marker_561d8db0827dea8b9786c554e7e3c79f.bindPopup(popup_4faefe8d82eab7e9f54fcdc659620b76)
+        ;
+
+        
+    
+    
+            circle_marker_561d8db0827dea8b9786c554e7e3c79f.bindTooltip(
+                `<div>
+                     Hipra
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_99329157ef130b65485372c6019c588d = L.circleMarker(
+                [40.85, -74.42],
+                {"bubblingMouseEvents": true, "color": "#FFC000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFC000", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_bc70dd0fda40add22ee102363ad8dbc3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f88805685e2ad460d12b07131d3256e6 = $(`<div id="html_f88805685e2ad460d12b07131d3256e6" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #FFC000; margin-bottom: 6px;">             Zoetis         </h4>         <b>Secteur :</b> RECHERCHE PRIVÉE<br>         <b>Ville :</b> Parsippany (New Jersey)<br>         <b>Téléphone :</b> +1 973 822 7000<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Médicaments, vaccins, diagnostics</span><br><br>         <a href="https://www.zoetis.com" target="_blank"            style="              background-color: #FFC000;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_bc70dd0fda40add22ee102363ad8dbc3.setContent(html_f88805685e2ad460d12b07131d3256e6);
+            
+        
+
+        circle_marker_99329157ef130b65485372c6019c588d.bindPopup(popup_bc70dd0fda40add22ee102363ad8dbc3)
+        ;
+
+        
+    
+    
+            circle_marker_99329157ef130b65485372c6019c588d.bindTooltip(
+                `<div>
+                     Zoetis
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_40b43194ef9a8b95ce89d426bd10ffb4 = L.circleMarker(
+                [49.87, 7.92],
+                {"bubblingMouseEvents": true, "color": "#FFC000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFC000", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_38afac7fa4f179d3cbf7ae17c7adedfe = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d197a93180e4903e0868011b4d03da43 = $(`<div id="html_d197a93180e4903e0868011b4d03da43" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #FFC000; margin-bottom: 6px;">             Boehringer Ingelheim Animal Health         </h4>         <b>Secteur :</b> RECHERCHE PRIVÉE<br>         <b>Ville :</b> Ingelheim/Lyon (Allemagne/France)<br>         <b>Téléphone :</b> 04 72 95 95 95<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Vaccins, antiparasitaires</span><br><br>         <a href="https://www.boehringer-ingelheim.com" target="_blank"            style="              background-color: #FFC000;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_38afac7fa4f179d3cbf7ae17c7adedfe.setContent(html_d197a93180e4903e0868011b4d03da43);
+            
+        
+
+        circle_marker_40b43194ef9a8b95ce89d426bd10ffb4.bindPopup(popup_38afac7fa4f179d3cbf7ae17c7adedfe)
+        ;
+
+        
+    
+    
+            circle_marker_40b43194ef9a8b95ce89d426bd10ffb4.bindTooltip(
+                `<div>
+                     Boehringer Ingelheim Animal Health
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ab2fff636e94cbb16f794154778c787 = L.circleMarker(
+                [50.63, 3.06],
+                {"bubblingMouseEvents": true, "color": "#FFC000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFC000", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_533048546e9879749d969cb0014eede2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6ae90df178d12417930cbe3d664ac54e = $(`<div id="html_6ae90df178d12417930cbe3d664ac54e" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #FFC000; margin-bottom: 6px;">             Vaxinano         </h4>         <b>Secteur :</b> RECHERCHE PRIVÉE<br>         <b>Ville :</b> Lille (Hauts-de-France)<br>         <b>Téléphone :</b> 03 20 13 13 13<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Vaccins nanoparticules</span><br><br>         <a href="https://www.vaxinano.com" target="_blank"            style="              background-color: #FFC000;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_533048546e9879749d969cb0014eede2.setContent(html_6ae90df178d12417930cbe3d664ac54e);
+            
+        
+
+        circle_marker_4ab2fff636e94cbb16f794154778c787.bindPopup(popup_533048546e9879749d969cb0014eede2)
+        ;
+
+        
+    
+    
+            circle_marker_4ab2fff636e94cbb16f794154778c787.bindTooltip(
+                `<div>
+                     Vaxinano
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23cf4780aca1abfb4216222e502a3e01 = L.circleMarker(
+                [45.6, 4.5],
+                {"bubblingMouseEvents": true, "color": "#FFC000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFC000", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_44f8198de7d5be7e3c053d47868817f1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_037c14349f54409b8ad6e8b6e1c620b1 = $(`<div id="html_037c14349f54409b8ad6e8b6e1c620b1" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #FFC000; margin-bottom: 6px;">             IDBiotech         </h4>         <b>Secteur :</b> RECHERCHE PRIVÉE<br>         <b>Ville :</b> Auvergne-Rhône-Alpes (Auvergne-Rhône-Alpes)<br>         <b>Téléphone :</b> 04 72 00 00 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Tests diagnostiques</span><br><br>         <a href="https://www.idbiotech.com" target="_blank"            style="              background-color: #FFC000;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_44f8198de7d5be7e3c053d47868817f1.setContent(html_037c14349f54409b8ad6e8b6e1c620b1);
+            
+        
+
+        circle_marker_23cf4780aca1abfb4216222e502a3e01.bindPopup(popup_44f8198de7d5be7e3c053d47868817f1)
+        ;
+
+        
+    
+    
+            circle_marker_23cf4780aca1abfb4216222e502a3e01.bindTooltip(
+                `<div>
+                     IDBiotech
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_20528a975f4fb1b63306874019693fb0 = L.circleMarker(
+                [43.3, 5.37],
+                {"bubblingMouseEvents": true, "color": "#C5504F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C5504F", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_c358492de59861420a8dfb0d29bc5895 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f90f5f35b82d741780135bf65205925f = $(`<div id="html_f90f5f35b82d741780135bf65205925f" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #C5504F; margin-bottom: 6px;">             LDA Bouches-du-Rhône (LDA13)         </h4>         <b>Secteur :</b> LABORATOIRES DIAGNOSTIC<br>         <b>Ville :</b> Bouches-du-Rhône (PACA)<br>         <b>Téléphone :</b> 04 91 00 00 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">160000 analyses/an - Santé animale</span><br><br>         <a href="https://www.lda13.fr" target="_blank"            style="              background-color: #C5504F;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_c358492de59861420a8dfb0d29bc5895.setContent(html_f90f5f35b82d741780135bf65205925f);
+            
+        
+
+        circle_marker_20528a975f4fb1b63306874019693fb0.bindPopup(popup_c358492de59861420a8dfb0d29bc5895)
+        ;
+
+        
+    
+    
+            circle_marker_20528a975f4fb1b63306874019693fb0.bindTooltip(
+                `<div>
+                     LDA Bouches-du-Rhône (LDA13)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_60faf8c71b488a0d7ea73985db404d58 = L.circleMarker(
+                [43.29, -0.37],
+                {"bubblingMouseEvents": true, "color": "#C5504F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C5504F", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_28fde5d305bbe8decc7c240b62b31944 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9ece44b00f8faf0bfa2d4a5d5ed9f54f = $(`<div id="html_9ece44b00f8faf0bfa2d4a5d5ed9f54f" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #C5504F; margin-bottom: 6px;">             LDA Pyrénées-Atlantiques         </h4>         <b>Secteur :</b> LABORATOIRES DIAGNOSTIC<br>         <b>Ville :</b> Pau (Nouvelle-Aquitaine)<br>         <b>Téléphone :</b> 05 59 00 00 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Zone TB bovine, santé animale</span><br><br>         <a href="https://www.ldapa.fr" target="_blank"            style="              background-color: #C5504F;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_28fde5d305bbe8decc7c240b62b31944.setContent(html_9ece44b00f8faf0bfa2d4a5d5ed9f54f);
+            
+        
+
+        circle_marker_60faf8c71b488a0d7ea73985db404d58.bindPopup(popup_28fde5d305bbe8decc7c240b62b31944)
+        ;
+
+        
+    
+    
+            circle_marker_60faf8c71b488a0d7ea73985db404d58.bindTooltip(
+                `<div>
+                     LDA Pyrénées-Atlantiques
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c39247bcc063ec63561a9e03dc8934bb = L.circleMarker(
+                [45.18, 0.73],
+                {"bubblingMouseEvents": true, "color": "#C5504F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C5504F", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_076dce41b05f41bc2cef524d9a2e47aa = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_127880eb7273343580b91916ecdf4e81 = $(`<div id="html_127880eb7273343580b91916ecdf4e81" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #C5504F; margin-bottom: 6px;">             LDA Dordogne         </h4>         <b>Secteur :</b> LABORATOIRES DIAGNOSTIC<br>         <b>Ville :</b> Périgueux (Nouvelle-Aquitaine)<br>         <b>Téléphone :</b> 05 53 00 00 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Prévalence TB bovine</span><br><br>         <a href="https://www.lda24.fr" target="_blank"            style="              background-color: #C5504F;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_076dce41b05f41bc2cef524d9a2e47aa.setContent(html_127880eb7273343580b91916ecdf4e81);
+            
+        
+
+        circle_marker_c39247bcc063ec63561a9e03dc8934bb.bindPopup(popup_076dce41b05f41bc2cef524d9a2e47aa)
+        ;
+
+        
+    
+    
+            circle_marker_c39247bcc063ec63561a9e03dc8934bb.bindTooltip(
+                `<div>
+                     LDA Dordogne
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e409875731d6698c1596b22b187b58bd = L.circleMarker(
+                [47.32, 5.04],
+                {"bubblingMouseEvents": true, "color": "#C5504F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C5504F", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_26236e5f7e0133b3e83ce03557614781 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_fd9981abdf147d9a102cee3d249075dc = $(`<div id="html_fd9981abdf147d9a102cee3d249075dc" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #C5504F; margin-bottom: 6px;">             LDA Côte-d'Or         </h4>         <b>Secteur :</b> LABORATOIRES DIAGNOSTIC<br>         <b>Ville :</b> Dijon (Bourgogne-Franche-Comté)<br>         <b>Téléphone :</b> 03 80 00 00 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Culture mycobactéries</span><br><br>         <a href="https://www.lda21.fr" target="_blank"            style="              background-color: #C5504F;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_26236e5f7e0133b3e83ce03557614781.setContent(html_fd9981abdf147d9a102cee3d249075dc);
+            
+        
+
+        circle_marker_e409875731d6698c1596b22b187b58bd.bindPopup(popup_26236e5f7e0133b3e83ce03557614781)
+        ;
+
+        
+    
+    
+            circle_marker_e409875731d6698c1596b22b187b58bd.bindTooltip(
+                `<div>
+                     LDA Côte-d'Or
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_92fb91bb10e69b4c322bc18f6deb7c54 = L.circleMarker(
+                [49.18, -0.35],
+                {"bubblingMouseEvents": true, "color": "#C5504F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C5504F", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_51b45b82e2775eba2e5b32825aa2e1dc = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_fae61e9f2c21661eba1b25da38edf5bd = $(`<div id="html_fae61e9f2c21661eba1b25da38edf5bd" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #C5504F; margin-bottom: 6px;">             LDA Calvados         </h4>         <b>Secteur :</b> LABORATOIRES DIAGNOSTIC<br>         <b>Ville :</b> Caen (Normandie)<br>         <b>Téléphone :</b> 02 31 00 00 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Microbiologie vétérinaire</span><br><br>         <a href="https://www.lda14.fr" target="_blank"            style="              background-color: #C5504F;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_51b45b82e2775eba2e5b32825aa2e1dc.setContent(html_fae61e9f2c21661eba1b25da38edf5bd);
+            
+        
+
+        circle_marker_92fb91bb10e69b4c322bc18f6deb7c54.bindPopup(popup_51b45b82e2775eba2e5b32825aa2e1dc)
+        ;
+
+        
+    
+    
+            circle_marker_92fb91bb10e69b4c322bc18f6deb7c54.bindTooltip(
+                `<div>
+                     LDA Calvados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a5baa28cdc2b2faed7f9168e8a493b6f = L.circleMarker(
+                [48.330000000000005, -2.69],
+                {"bubblingMouseEvents": true, "color": "#C5504F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C5504F", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_68485d64db7f128a9d90a67067dfe0ed = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6183f415294f1e917746855bfe91c94a = $(`<div id="html_6183f415294f1e917746855bfe91c94a" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #C5504F; margin-bottom: 6px;">             LABOCEA         </h4>         <b>Secteur :</b> LABORATOIRES DIAGNOSTIC<br>         <b>Ville :</b> Ploufragan (Bretagne)<br>         <b>Téléphone :</b> +33 (0)2 96 01 92 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Santé animale, sécurité alimentaire</span><br><br>         <a href="https://www.labocea.fr" target="_blank"            style="              background-color: #C5504F;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_68485d64db7f128a9d90a67067dfe0ed.setContent(html_6183f415294f1e917746855bfe91c94a);
+            
+        
+
+        circle_marker_a5baa28cdc2b2faed7f9168e8a493b6f.bindPopup(popup_68485d64db7f128a9d90a67067dfe0ed)
+        ;
+
+        
+    
+    
+            circle_marker_a5baa28cdc2b2faed7f9168e8a493b6f.bindTooltip(
+                `<div>
+                     LABOCEA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4b22e0cc68f99b5094fe805c50c80bd2 = L.circleMarker(
+                [44.93, 2.44],
+                {"bubblingMouseEvents": true, "color": "#C5504F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C5504F", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_2fa51bbf25a84f2f0fe2979a2d614532 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1415c3546f0e767442cadd25d65306d0 = $(`<div id="html_1415c3546f0e767442cadd25d65306d0" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #C5504F; margin-bottom: 6px;">             TERANA         </h4>         <b>Secteur :</b> LABORATOIRES DIAGNOSTIC<br>         <b>Ville :</b> Aurillac (Occitanie)<br>         <b>Téléphone :</b> +33 (0)4 71 45 56 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Santé animale, surveillance</span><br><br>         <a href="https://www.terana.fr" target="_blank"            style="              background-color: #C5504F;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_2fa51bbf25a84f2f0fe2979a2d614532.setContent(html_1415c3546f0e767442cadd25d65306d0);
+            
+        
+
+        circle_marker_4b22e0cc68f99b5094fe805c50c80bd2.bindPopup(popup_2fa51bbf25a84f2f0fe2979a2d614532)
+        ;
+
+        
+    
+    
+            circle_marker_4b22e0cc68f99b5094fe805c50c80bd2.bindTooltip(
+                `<div>
+                     TERANA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ab87c6bb7fb6a1f74c1e743c47e98ddd = L.circleMarker(
+                [49.17, -0.25],
+                {"bubblingMouseEvents": true, "color": "#C5504F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C5504F", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_86a5d070c799f36fb75ca5c9ec3823a3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c23ff6f94c216ca3f458023015d9550d = $(`<div id="html_c23ff6f94c216ca3f458023015d9550d" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #C5504F; margin-bottom: 6px;">             LABÉO         </h4>         <b>Secteur :</b> LABORATOIRES DIAGNOSTIC<br>         <b>Ville :</b> Saint-Contest (Normandie)<br>         <b>Téléphone :</b> +33 (0)2 31 47 20 20<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Santé animale, sécurité alimentaire</span><br><br>         <a href="https://www.labeo.fr" target="_blank"            style="              background-color: #C5504F;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_86a5d070c799f36fb75ca5c9ec3823a3.setContent(html_c23ff6f94c216ca3f458023015d9550d);
+            
+        
+
+        circle_marker_ab87c6bb7fb6a1f74c1e743c47e98ddd.bindPopup(popup_86a5d070c799f36fb75ca5c9ec3823a3)
+        ;
+
+        
+    
+    
+            circle_marker_ab87c6bb7fb6a1f74c1e743c47e98ddd.bindTooltip(
+                `<div>
+                     LABÉO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_45eb141e85cc1b318b9f737dea83acc3 = L.circleMarker(
+                [46.58, 0.34],
+                {"bubblingMouseEvents": true, "color": "#C5504F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C5504F", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_22bb4159f84a19d9dca35a502474d9f0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b8f63c18ccd1edf633bf8ff9e6a74947 = $(`<div id="html_b8f63c18ccd1edf633bf8ff9e6a74947" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #C5504F; margin-bottom: 6px;">             LABORIZON         </h4>         <b>Secteur :</b> LABORATOIRES DIAGNOSTIC<br>         <b>Ville :</b> Poitiers (Nouvelle-Aquitaine)<br>         <b>Téléphone :</b> +33 (0)5 49 60 09 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Santé animale, diagnostic</span><br><br>         <a href="https://www.laborizon.fr" target="_blank"            style="              background-color: #C5504F;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_22bb4159f84a19d9dca35a502474d9f0.setContent(html_b8f63c18ccd1edf633bf8ff9e6a74947);
+            
+        
+
+        circle_marker_45eb141e85cc1b318b9f737dea83acc3.bindPopup(popup_22bb4159f84a19d9dca35a502474d9f0)
+        ;
+
+        
+    
+    
+            circle_marker_45eb141e85cc1b318b9f737dea83acc3.bindTooltip(
+                `<div>
+                     LABORIZON
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e942a0e413ab01885993a526cde2b96a = L.circleMarker(
+                [47.68, 2.62],
+                {"bubblingMouseEvents": true, "color": "#C5504F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C5504F", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_3e6e139953668137ecff7aefb7bb6e2c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_73e3909c48a893009b6a54b66e512fe5 = $(`<div id="html_73e3909c48a893009b6a54b66e512fe5" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #C5504F; margin-bottom: 6px;">             Cerba Vet         </h4>         <b>Secteur :</b> LABORATOIRES DIAGNOSTIC<br>         <b>Ville :</b> Gien (Centre-Val de Loire)<br>         <b>Téléphone :</b> +33 (0)2 38 67 96 96<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Diagnostic vétérinaire leader</span><br><br>         <a href="https://www.cerba-vet.com" target="_blank"            style="              background-color: #C5504F;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_3e6e139953668137ecff7aefb7bb6e2c.setContent(html_73e3909c48a893009b6a54b66e512fe5);
+            
+        
+
+        circle_marker_e942a0e413ab01885993a526cde2b96a.bindPopup(popup_3e6e139953668137ecff7aefb7bb6e2c)
+        ;
+
+        
+    
+    
+            circle_marker_e942a0e413ab01885993a526cde2b96a.bindTooltip(
+                `<div>
+                     Cerba Vet
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e480eaec5750e2b210f8575f3ee85083 = L.circleMarker(
+                [47.27, -1.49],
+                {"bubblingMouseEvents": true, "color": "#C5504F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C5504F", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_eda8a3ad11cce4bb1c415854477d87ce = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3c2ba92257adc3472db5f91e6dd2b0a4 = $(`<div id="html_3c2ba92257adc3472db5f91e6dd2b0a4" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #C5504F; margin-bottom: 6px;">             Inovalys         </h4>         <b>Secteur :</b> LABORATOIRES DIAGNOSTIC<br>         <b>Ville :</b> Nantes / Angers (Pays de la Loire)<br>         <b>Téléphone :</b> 02 40 00 00 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Analyses agroalimentaires, santé</span><br><br>         <a href="https://www.inovalys.fr" target="_blank"            style="              background-color: #C5504F;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_eda8a3ad11cce4bb1c415854477d87ce.setContent(html_3c2ba92257adc3472db5f91e6dd2b0a4);
+            
+        
+
+        circle_marker_e480eaec5750e2b210f8575f3ee85083.bindPopup(popup_eda8a3ad11cce4bb1c415854477d87ce)
+        ;
+
+        
+    
+    
+            circle_marker_e480eaec5750e2b210f8575f3ee85083.bindTooltip(
+                `<div>
+                     Inovalys
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b9f2f016cf94bc0b7a62d5669a9b2eb6 = L.circleMarker(
+                [49.3, -0.05],
+                {"bubblingMouseEvents": true, "color": "#7F3F97", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7F3F97", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_5f7d8f97bec1d354398cc7d071660aed = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5938d65f73f123fdff0f02f3f1de99ec = $(`<div id="html_5938d65f73f123fdff0f02f3f1de99ec" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #7F3F97; margin-bottom: 6px;">             CIRALE - Centre Imagerie Équine         </h4>         <b>Secteur :</b> CLINIQUES<br>         <b>Ville :</b> Goustranville (Normandie)<br>         <b>Téléphone :</b> 02 31 00 00 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Imagerie, recherche équine</span><br><br>         <a href="https://www.normandieequinevallee.fr" target="_blank"            style="              background-color: #7F3F97;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_5f7d8f97bec1d354398cc7d071660aed.setContent(html_5938d65f73f123fdff0f02f3f1de99ec);
+            
+        
+
+        circle_marker_b9f2f016cf94bc0b7a62d5669a9b2eb6.bindPopup(popup_5f7d8f97bec1d354398cc7d071660aed)
+        ;
+
+        
+    
+    
+            circle_marker_b9f2f016cf94bc0b7a62d5669a9b2eb6.bindTooltip(
+                `<div>
+                     CIRALE - Centre Imagerie Équine
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5d1a46d1e167ce84b48ee8271c060637 = L.circleMarker(
+                [43.25, -1.65],
+                {"bubblingMouseEvents": true, "color": "#7F3F97", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7F3F97", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_477f117f021f409d4467f74a3a67e054 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b0a2e740b1af89bb1fd433998598a4d7 = $(`<div id="html_b0a2e740b1af89bb1fd433998598a4d7" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #7F3F97; margin-bottom: 6px;">             Clinique Vétérinaire Arta Leku         </h4>         <b>Secteur :</b> CLINIQUES<br>         <b>Ville :</b> Hasparren (Pays Basque) (Nouvelle-Aquitaine)<br>         <b>Téléphone :</b> 05 59 29 60 57<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Activité bovine, rurale</span><br><br>         <a href="https://www.captainvet.com" target="_blank"            style="              background-color: #7F3F97;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_477f117f021f409d4467f74a3a67e054.setContent(html_b0a2e740b1af89bb1fd433998598a4d7);
+            
+        
+
+        circle_marker_5d1a46d1e167ce84b48ee8271c060637.bindPopup(popup_477f117f021f409d4467f74a3a67e054)
+        ;
+
+        
+    
+    
+            circle_marker_5d1a46d1e167ce84b48ee8271c060637.bindTooltip(
+                `<div>
+                     Clinique Vétérinaire Arta Leku
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_01a0e5cc3a53177dc782cbb25704fbbc = L.circleMarker(
+                [45.35, 0.51],
+                {"bubblingMouseEvents": true, "color": "#7F3F97", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7F3F97", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_428c9b3ebe892a0d165e3f6d3e84c765 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_30a72442477a6f3713e9ff0d1be9d5da = $(`<div id="html_30a72442477a6f3713e9ff0d1be9d5da" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #7F3F97; margin-bottom: 6px;">             Clinique Vétérinaire Trois Valets         </h4>         <b>Secteur :</b> CLINIQUES<br>         <b>Ville :</b> Mussidan (Nouvelle-Aquitaine)<br>         <b>Téléphone :</b> 05 53 81 00 71<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Prophylaxie TB, biosécurité</span><br><br>         <a href="https://www.veterinaire-troisvalets.fr" target="_blank"            style="              background-color: #7F3F97;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_428c9b3ebe892a0d165e3f6d3e84c765.setContent(html_30a72442477a6f3713e9ff0d1be9d5da);
+            
+        
+
+        circle_marker_01a0e5cc3a53177dc782cbb25704fbbc.bindPopup(popup_428c9b3ebe892a0d165e3f6d3e84c765)
+        ;
+
+        
+    
+    
+            circle_marker_01a0e5cc3a53177dc782cbb25704fbbc.bindTooltip(
+                `<div>
+                     Clinique Vétérinaire Trois Valets
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4d2759b93f944a5e3a5c78edc3e62686 = L.circleMarker(
+                [43.7, -1.05],
+                {"bubblingMouseEvents": true, "color": "#7F3F97", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7F3F97", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_63cd0343dfeacbe77e500b49c5a1d1ef = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_fc0a29605c13ed5073e844d5fe867484 = $(`<div id="html_fc0a29605c13ed5073e844d5fe867484" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #7F3F97; margin-bottom: 6px;">             Bio'Vet Santé Animale - Réseau         </h4>         <b>Secteur :</b> CLINIQUES<br>         <b>Ville :</b> Saint-Paul-lès-Dax (Nouvelle-Aquitaine)<br>         <b>Téléphone :</b> 05 58 00 00 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Médecine, chirurgie, NAC</span><br><br>         <a href="https://www.biovet.fr" target="_blank"            style="              background-color: #7F3F97;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_63cd0343dfeacbe77e500b49c5a1d1ef.setContent(html_fc0a29605c13ed5073e844d5fe867484);
+            
+        
+
+        circle_marker_4d2759b93f944a5e3a5c78edc3e62686.bindPopup(popup_63cd0343dfeacbe77e500b49c5a1d1ef)
+        ;
+
+        
+    
+    
+            circle_marker_4d2759b93f944a5e3a5c78edc3e62686.bindTooltip(
+                `<div>
+                     Bio'Vet Santé Animale - Réseau
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_88c770c2e18654ac872e7788bf97ebc0 = L.circleMarker(
+                [46.17, 1.88],
+                {"bubblingMouseEvents": true, "color": "#7F3F97", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7F3F97", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_dccb018ad4b314f767d6547ba3e8d777 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_cc674bec6bc6ddc901fb647e4081ee49 = $(`<div id="html_cc674bec6bc6ddc901fb647e4081ee49" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #7F3F97; margin-bottom: 6px;">             Centre Vet Guéret         </h4>         <b>Secteur :</b> CLINIQUES<br>         <b>Ville :</b> Guéret (Nouvelle-Aquitaine)<br>         <b>Téléphone :</b> 05 55 00 00 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Zone élevage bovin</span><br><br>         <a href="https://www.centevet.fr" target="_blank"            style="              background-color: #7F3F97;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_dccb018ad4b314f767d6547ba3e8d777.setContent(html_cc674bec6bc6ddc901fb647e4081ee49);
+            
+        
+
+        circle_marker_88c770c2e18654ac872e7788bf97ebc0.bindPopup(popup_dccb018ad4b314f767d6547ba3e8d777)
+        ;
+
+        
+    
+    
+            circle_marker_88c770c2e18654ac872e7788bf97ebc0.bindTooltip(
+                `<div>
+                     Centre Vet Guéret
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c537b66a361a8a57276badd076144861 = L.circleMarker(
+                [46.34, 2.64],
+                {"bubblingMouseEvents": true, "color": "#7F3F97", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7F3F97", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+        var popup_465165b4f78d2e670ac5f207c2e1bb77 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_41e7384460cb3b5950fa3816538b599e = $(`<div id="html_41e7384460cb3b5950fa3816538b599e" style="width: 100.0%; height: 100.0%;">     <div style="width: 300px; font-family: Arial, sans-serif;">         <h4 style="color: #7F3F97; margin-bottom: 6px;">             Vet Bourbons         </h4>         <b>Secteur :</b> CLINIQUES<br>         <b>Ville :</b> Montluçon (Auvergne-Rhône-Alpes)<br>         <b>Téléphone :</b> 04 70 00 00 00<br><br>         <b>Spécialité :</b><br>         <span style="font-size: 12px;">Prophylaxie bovine</span><br><br>         <a href="https://www.vetbourbons.fr" target="_blank"            style="              background-color: #7F3F97;              color: white;              padding: 6px 10px;              border-radius: 4px;              text-decoration: none;              font-size: 12px;              font-weight: bold;            ">            🌐 Site web         </a>     </div>     </div>`)[0];
+                popup_465165b4f78d2e670ac5f207c2e1bb77.setContent(html_41e7384460cb3b5950fa3816538b599e);
+            
+        
+
+        circle_marker_c537b66a361a8a57276badd076144861.bindPopup(popup_465165b4f78d2e670ac5f207c2e1bb77)
+        ;
+
+        
+    
+    
+            circle_marker_c537b66a361a8a57276badd076144861.bindTooltip(
+                `<div>
+                     Vet Bourbons
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            tile_layer_ef9cfb0c8bac1e77907174690ffc013a.addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+    
+            tile_layer_ef9cfb0c8bac1e77907174690ffc013a.addTo(map_6d6a4ef58e650996e26b316863ba4ff8);
+        
+</script>
+</html>
